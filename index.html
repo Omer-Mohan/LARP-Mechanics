@@ -619,10 +619,10 @@ let CLASSES = [
     desc:'לוחם חסר קסם שסומך רק על הזרוע החזקה שלו כדי להכריע כל קרב.',
     weaponType:'sword', dualAtRank:2,
     ranks:[
-      {hp:4, abilities:[{name:'מכת עוצמה', qty:'פעם ביום'}]},
-      {abilities:[{name:'מכת הדף', qty:'פעם בקרב'}]},
-      {abilities:[{name:'מכת הדף', qty:'סה"כ 3 בקרב'}]},
-      {hp:5, abilities:[{name:'מכת עוצמה', qty:'סה"כ 3 ביום'}]},
+      {hp:4, abilities:[{name:'מכת עוצמה', qty:'פעם בקרב'}]},
+      {abilities:[{name:'מכת הדף', qty:'3 בקרב'}]},
+      {abilities:[{name:'מכת עוצמה', qty:'סה"כ 3 בקרב'}]},
+      {hp:5, abilities:[{name:'גל הדף', qty:'3 בקרב', override:'כמו מכת הדף, אבל על כל מי שנמצא מול הדמות.'}]},
       {abilities:[{name:'פחד', qty:'פעמיים בקרב'}]},
       {abilities:[{name:'חסינות לפחד, פקודה והיפנוט'}]},
       {hp:6, abilities:[{name:'גל פחד', qty:'פעם ביום'}]},
@@ -636,8 +636,8 @@ let CLASSES = [
     ranks:[
       {hp:2, abilities:[{name:'הגנה מאגית'},{name:'קליע קסם'},{name:'החייאה', qty:'פעמיים בקרב'},{name:'הקפאה', qty:'פעמיים בקרב'}]},
       {abilities:[{name:'שורשים', qty:'3 בקרב'}]},
-      {abilities:[{name:'החייאה', qty:'סה"כ 3 בקרב'}]},
-      {abilities:[{name:'כדור אש', qty:'פעם בקרב'}]},
+      {abilities:[{name:'החייאה', qty:'סה"כ 3 בקרב'},{name:'הקפאה', qty:'סה"כ 3 בקרב'}]},
+      {abilities:[{name:'כדור אש', qty:'פעמיים בקרב'}]},
       {hp:3, isNote:true, abilities:[{name:'גילוי אמת', qty:'פעם ביום'}]},
       {abilities:[{name:'אשליה', qty:'פעם ביום'}]},
       {abilities:[{name:'שיגור', qty:'פעם ביום'}]},
@@ -652,7 +652,7 @@ let CLASSES = [
       {hp:2, abilities:[{name:'הגנה מאגית'},{name:'קליע קסם'},{name:'ריפוי', qty:'3 בקרב'},{name:'שורשים', qty:'3 בקרב'}]},
       {abilities:[{name:'הקפאה', qty:'2 בקרב'}]},
       {abilities:[{name:'צורת חיה', qty:'פעם ביום', override:'צורת חיה נותנת לדמות עוד יכולות לפי החיה שנבחרה, עד סוף הקרב. דוב: +2 חיים. אריה: 2 שימושי פחד. נשר: 20 שניות תעופה.'}]},
-      {abilities:[{name:'כדור אש', qty:'3 בקרב'}]},
+      {abilities:[{name:'כדור אש', qty:'3 בקרב'},{name:'הקפאה', qty:'סה"כ 3 בקרב'}]},
       {hp:3, isNote:true, abilities:[{name:'הסתתרות'}]},
       {abilities:[{name:'גל פחד', qty:'פעם בקרב'}]},
       {abilities:[{name:'גל אש', qty:'3 ביום'}]},
@@ -679,14 +679,14 @@ let CLASSES = [
     desc:'מרגל ערמומי שמנצח בעורמה, בהסתתרות ובתקיפה מן המארב.',
     weaponType:'sword', dualAtRank:null,
     ranks:[
-      {hp:2, abilities:[{name:'חמיקה', qty:'פעמיים בקרב'},{name:'הסתתרות'}]},
-      {abilities:[{name:'סכין רעל', qty:'פעמיים ביום'}]},
+      {hp:2, abilities:[{name:'סכין רעל', qty:'פעם בקרב'},{name:'הסתתרות'}]},
+      {abilities:[{name:'חמיקה', qty:'פעם בקרב'},{name:'סכין רעל', qty:'סה"כ 2 בקרב'}]},
       {abilities:[{name:'שכנוע', qty:'פעם ביום'}]},
-      {abilities:[{name:'חמיקה', qty:'סה"כ 3 בקרב'}]},
+      {abilities:[{name:'חמיקה', qty:'סה"כ 3 בקרב'},{name:'סכין רעל', qty:'סה"כ 3 בקרב'}]},
       {hp:3, abilities:[{name:'התחזות', qty:'פעם ביום'}]},
-      {abilities:[{name:'גילוי אמת', qty:'פעם ביום'},{name:'סכין רעל', qty:'סה"כ 3 ביום'}]},
+      {abilities:[{name:'גילוי אמת', qty:'פעם ביום'},{name:'סכין רעל', qty:'סה"כ 4 בקרב'}]},
       {abilities:[{name:'חסינות לגילוי אמת'}]},
-      {abilities:[{name:'פני מת', qty:'פעם ביום'}]},
+      {abilities:[{name:'פני מת', qty:'פעם ביום'},{name:'סכין רעל', qty:'סה"כ 5 בקרב'}]},
       {hp:4, abilities:[{name:'שיגור צללים'}]},
       {abilities:[{name:'דקירה בגב', qty:'פעם ביום', override:'מכה שמורידה 5 חיים. אם המכה פוסלת את מי שנפגע ממנה, היא נטענת מחדש.'}]},
     ]},
@@ -709,7 +709,7 @@ let CLASSES = [
     desc:'משרת אלוהי שמביא ריפוי, ברכה וכוח קדוש לשדה הקרב.',
     weaponType:'orb', dualAtRank:null,
     ranks:[
-      {hp:2, abilities:[{name:'הגנה מאגית'},{name:'קליע קסם'},{name:'החייאה', qty:'3 בקרב'}]},
+      {hp:2, abilities:[{name:'הגנה מאגית'},{name:'קליע קסם'},{name:'החייאה', qty:'3 בקרב'},{name:'ריפוי', qty:'3 בקרב'}]},
       {abilities:[{name:'ברכת החיים', qty:'פעמיים ביום'}]},
       {abilities:[{name:'יכולת אלוהית', godTier:1}]},
       {abilities:[{name:'שדה שלום', qty:'פעם ביום'}]},
@@ -945,6 +945,7 @@ function classChipsHtml(classSlugs){
 
 /* ================= HELPERS ================= */
 function showHub(){
+  currentVisibleClassSlug = null;
   document.getElementById('page-hub').style.display = 'block';
   document.getElementById('page-class').style.display = 'none';
   document.getElementById('page-abilities').style.display = 'none';
@@ -955,6 +956,7 @@ function showHub(){
 
 let abilitiesBuilt = false;
 function showAbilities(){
+  currentVisibleClassSlug = null;
   document.getElementById('page-hub').style.display = 'none';
   document.getElementById('page-class').style.display = 'none';
   document.getElementById('page-admin').style.display = 'none';
@@ -967,6 +969,7 @@ function showAbilities(){
 
 function showAdmin(){
   if(!currentUser){ openLoginModal(); return; }
+  currentVisibleClassSlug = null;
   document.getElementById('page-hub').style.display = 'none';
   document.getElementById('page-class').style.display = 'none';
   document.getElementById('page-abilities').style.display = 'none';
@@ -996,6 +999,7 @@ function formatTimeRemaining(ms){
 
 function showLore(){
   purgeExpiredLoreEntries();
+  currentVisibleClassSlug = null;
   showingLoreRecycleBin = false;
   document.getElementById('page-hub').style.display = 'none';
   document.getElementById('page-class').style.display = 'none';
@@ -1604,8 +1608,13 @@ function renderRankEditorInto(){
           <b style="font-family:'Suez One'; color:var(--gold);">דרגה ${idx + 1}</b>
           <input type="number" placeholder="חיים (רק אם השתנו)" value="${r.hp || ''}" style="width:170px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); color:#fff; border-radius:10px; padding:6px 10px;" onchange="setRankHp(${idx}, this.value)">
         </div>
-        <div class="ability-grid" style="margin-top:8px;">
-          ${r.abilities.map((a, aIdx) => `<span class="ability-chip" style="cursor:default;">${a.name}${a.qty ? ` <span class="qty">(${a.qty})</span>` : ''} <span style="cursor:pointer; color:#ff9a86;" onclick="removeAbilityFromRank(${idx},${aIdx})">✕</span></span>`).join('') || '<span class="form-note">אין עדיין יכולות בדרגה זו.</span>'}
+        <div class="ability-grid" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
+          ${r.abilities.map((a, aIdx) => `
+            <span class="ability-chip" style="cursor:default; display:inline-flex; align-items:center; gap:6px;">
+              ${a.name}
+              <input type="text" value="${a.qty || ''}" placeholder="כמות" title="עריכת הכמות" style="width:80px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:8px; padding:3px 6px; font-size:0.82rem;" onchange="updateRankAbilityQty(${idx},${aIdx},this.value)">
+              <span style="cursor:pointer; color:#ff9a86;" onclick="removeAbilityFromRank(${idx},${aIdx})">✕</span>
+            </span>`).join('') || '<span class="form-note">אין עדיין יכולות בדרגה זו.</span>'}
         </div>
         <div class="admin-form-row" style="margin-top:8px;">
           <input list="allAbilitiesDatalist" placeholder="שם יכולת (קיימת או חדשה)" id="rankName_${idx}" style="flex:2;">
@@ -1618,6 +1627,7 @@ function renderRankEditorInto(){
 }
 
 function setRankHp(idx, val){ draftRanks[idx].hp = val ? parseInt(val, 10) : null; }
+function updateRankAbilityQty(rankIdx, abIdx, val){ draftRanks[rankIdx].abilities[abIdx].qty = val.trim(); }
 
 function addAbilityToRank(idx){
   const nameInput = document.getElementById(`rankName_${idx}`);
@@ -1693,6 +1703,7 @@ function saveClassFormModal(){
 
   closeClassForm();
   renderHub();
+  if(currentVisibleClassSlug === slug) showClass(slug);
   if(document.getElementById('page-abilities').style.display === 'block') buildAbilitiesGrid();
 }
 
@@ -1866,11 +1877,13 @@ function weaponHtml(type, dual){
 }
 
 const DEFAULT_BONUS_NOTE = 'כל היכולות עם מספר שימושים (המסומנות כ"חדש" למעלה) מקבלות שימוש נוסף אחד בדרגה זו.';
+let currentVisibleClassSlug = null;
 
 /* ================= RENDER: CLASS DETAIL ================= */
 function showClass(slug){
   const c = CLASSES.find(x => x.slug === slug);
   if(!c) return;
+  currentVisibleClassSlug = slug;
   document.getElementById('page-hub').style.display = 'none';
   document.getElementById('page-abilities').style.display = 'none';
   document.getElementById('page-admin').style.display = 'none';
